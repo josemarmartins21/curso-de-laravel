@@ -1,0 +1,1 @@
+<h1>Rota do blog</h1>
