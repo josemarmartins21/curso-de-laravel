@@ -1,43 +1,32 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="pt">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
         <title>Laravel</title>
-
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
-
-        <!-- Styles / Scripts -->
-        @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
-            @vite(['resources/css/app.css', 'resources/js/app.js'])
-        @else
-            <style>
-              body {
-                background-color: palegoldenrod;
-                font-family: Arial, Helvetica, sans-serif;
-              }
-
-              a {
-                color: black;
-                text-decoration: none;
-              }
-
-              a:active {
-                color: white;
-              }
-
-              a:hover {
-                text-decoration: underline;
-              }
-            </style>
-        @endif
+        <link rel="stylesheet" href="/css/style.css">
     </head>
     <body>
-            <h1>Bem vindos ao mundo da Triz</h1>
-            <a href="/kitutes">Nossos kitutes</a>
-            <a href="/contactos">Contactos</a>
+            
+              <header> <h1>Bem vindos ao mundo da Triz</h1></header>
+              
+              <main>
+              <h2>Nome dos nossos funcionarios</h2>
+              @foreach ($nomes_func as $nome)
+                  <p>
+                    <ul>
+                      @if ($nome == 'Beatriz Isabel')
+                        <li class="bea">Nossa Ceo {{$nome}}</li>
+                      @endif
+                      <li>{{$nome}}</li>
+                    </ul>
+                  </p>
+              @endforeach
+              <a href="/kitutes">Nossos kitutes</a>
+              <a href="/contactos">Contactos</a>
+            </main>
+            <footer>
+              <p>&copy;Todos os direito reservado a <a href="#">{{$nomes_func['1']}}</a></p>
+            </footer>
     </body>
 </html>
