@@ -27,10 +27,16 @@ main {
 
 }
 
+p {
+    margin: 0px 0px 10px 0px;
+    line-height: 1.7em;
+    text-indent: 30px;
+}
+
 
 h1 {
-    color: white;
     text-align: center;
+    color: white
 }
 
 ul {

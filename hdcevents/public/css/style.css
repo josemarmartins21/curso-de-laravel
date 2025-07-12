@@ -1,9 +1,27 @@
 @charset "UTF-8";
 
+* {
+    font-family: 'Roboto';
+}
+
 h1 {
     color: red;
 }
 
 img {
     width: 300px;
+}
+    
+main {
+    width: 800px;
+    height: 800px;
+    background-color: white;
+    margin: auto;
+    padding: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+h1 {
+    text-align: center;
 }
