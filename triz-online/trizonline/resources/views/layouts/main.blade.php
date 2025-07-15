@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="/css/style.css">
     </head>
     <body>
-    <header> <h1>@yield('pagina')</h1></header>
+    <header><h1>@yield('pagina')</h1></header>
     @yield('content') 
     <footer>
         <p>&copy;Todos os direito reservado a <a href="#">{{$nomes_func['1']}}</a></p>

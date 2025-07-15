@@ -2,7 +2,10 @@
 
 @section('tittle', 'HDC Events')
 
+
+
 @section('content')
+
         <img src="/image/catedral.jpg" alt="imagem exemplo">
        @if (10 < 5)
             <p>A condição é true</p>

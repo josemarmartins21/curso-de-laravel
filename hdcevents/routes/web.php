@@ -22,9 +22,16 @@ Route::get('/contacto', function () {
 });
 
 Route::get('/produtos', function () {
-    return view('produtos');
+    $busca = request('search');
+
+    return view('produtos', ['busca' => $busca]);
 });
 
 Route::get('/blog', function () {
     return view('blog');
+});
+
+
+Route::get('/produtos_test/{id?}', function ($id = null) {
+    return view('produt', ['id' => $id]);
 });

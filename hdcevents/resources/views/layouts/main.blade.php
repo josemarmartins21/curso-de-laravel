@@ -14,7 +14,27 @@
         <link rel="stylesheet" href="/css/style.css">
         <script src="/js/script.js"></script>
     </head>
-    <body >
+    <body>
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="collapse navbar-collapse" id="navbar">
+                    <a href="/" class="navbar-brand">
+                        <img src="/image/qos-logo-sem-fundo.png" alt="logotipo">
+                    </a>
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a href="/" class="nav-link">Eventos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/" class="nav-link">Criar eventos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/" class="nav-link">Entrar e cadastrar</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
    @yield('content')
     <footer>
         <p>HDC events &copy;2025</p>

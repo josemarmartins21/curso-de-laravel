@@ -1,0 +1,193 @@
+@charset "UTF-8";
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Mulish', Arial, Helvetica, sans-serif;
+}
+
+header {
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 10px;
+    align-items: center;
+}
+
+
+nav#menu {
+    align-self: flex-end;
+    padding-bottom: 10px;
+}
+
+img#logo-img:hover {
+    cursor: pointer;
+}
+
+ul > li {
+    display: inline;
+}
+
+ul > li > a {
+    color: white;
+    text-decoration: none;
+    margin: 0px 5px;
+    
+}
+
+ul > li > a:hover {
+    text-decoration: underline;
+    color: green;
+}
+
+#black {
+    height: 76vh;
+    background-color: rgba(0, 0, 0, 0.315);
+    
+}
+
+video {
+    position: absolute;
+    top: 50%;
+    left: 50%;  
+    min-width: 76vw;  
+    min-height: 76vh;
+    width: auto;
+    height: auto;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+}
+/* Hero */
+div#hero  {
+    background: black url(../img/hero.jpg) no-repeat;
+    background-size: cover;
+    
+}
+
+/*Secção nossos jogos*/
+h1.titulo {
+    text-align: center;
+    padding: 40px;
+    font-size: 3em;
+    font-weight: 700;
+}
+
+section#jogos > div#container {
+    display: flex;
+    flex-flow: row wrap ;
+    
+}
+
+div.jogo {
+    margin: 10px;
+    padding: 10px;
+    flex-basis: 450px;
+    flex-grow: 2;
+    
+}
+
+div.jogo:last-child {
+    flex-grow: 0;
+    flex-basis: 800px;
+    text-align: left;
+}
+
+div.jogo:last-child > p {
+    text-align: justify;
+}
+
+
+div.jogo:hover {
+    outline: 1px solid black;
+}
+
+.img > img.pequena {
+    width: 100%;
+    display: block;
+}
+
+div.jogo > h2 {
+    text-align: center;
+}
+
+div.jogo > p {
+    text-align: center;
+    line-height: 1.5em;
+
+}
+
+/*Secção consoles do XBOX*/
+section#consoles-xbox {
+    padding: 30px;
+}
+
+
+div#consoles {
+    display: flex;
+    height: 1750px;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+img.pequena-c {
+    display: block;
+    width: 100%;
+    
+}
+
+div.console {
+    flex-basis: 500px;
+    flex-shrink: 1;
+    transition: .4s;
+   
+}
+
+div.console:hover {
+    transform: translate(5px, -10px);
+    cursor: pointer;
+}
+
+div#c2 {
+    align-self: center;
+}
+
+div#c4 {
+    align-self: flex-end;
+}
+
+
+
+div#c2 > h2 {
+    text-align: center;
+}
+
+
+/*Secção de nossos serviços*/
+
+#nossos-servicos {
+    background-color: rgba(0, 0, 0, 0.158);
+    margin-top: 30px;
+    margin-bottom: 100px;
+    padding: 20px;
+    display: flex;
+    flex: row wrap;
+    justify-content: space-around;
+    
+    
+}
+
+div.servicos {
+    width: 400px;
+  
+}
+
+
+
+div.servicos > div.img > img {
+    display: block;
+    width: 100%;
+    
+}
