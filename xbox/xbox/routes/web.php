@@ -6,7 +6,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/jogos/{id?}', function ($id = 'Xbox') {
+Route::get('/jogos', function () {
+    $id = request('search');    
+
     return view('jogos', ['id' => $id]);
 });
 
@@ -21,6 +23,14 @@ Route::get('/servicos', function () {
 
 Route::get('/sobre', function () {
     return view('sobre');
+});
+
+
+Route::get('/nomes', function () {
+    $nomes = ['Bill Gates', 'Satya Anadela', 'Phill Spencer'];
+    $busca = request('search');
+    $ceo = 'Microsoft';
+    return view('nomes', ['nomes' => $nomes, 'busca' => $busca, 'ceo' => $ceo]);
 });
 
 

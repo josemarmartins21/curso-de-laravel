@@ -1,37 +1,27 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EventController;
+use App\Http\Controllers\InforController;
 
-Route::get('/', function () {
-    $nome = 'Matheus';
-    $idade = 29;
-    $arr = [10,100,212,341,45,12];
-    $nomes = ['Mateus', 'Maria', 'João', 'Salvio'];
+Route::get('/', [EventController::class, 'index']);
 
-    return view('welcome', ['nome' => $nome, 
-        'idade2' => $idade, 
-        'profissao' => 'programador', 
-        'arr' => $arr, 
-        'nomes' => $nomes
-    ]);
-});
+
+Route::get('/events/create', [EventController::class, 'create']);
 
 
 Route::get('/contacto', function () {
     return view('contacto');
 });
 
-Route::get('/produtos', function () {
-    $busca = request('search');
-
-    return view('produtos', ['busca' => $busca]);
-});
+Route::get('/produtos/adicionar', [InforController::class, 'index']);
+Route::get('/produtos/remove', [InforController::class, 'remover']);
 
 Route::get('/blog', function () {
     return view('blog');
 });
 
 
-Route::get('/produtos_test/{id?}', function ($id = null) {
+Route::get('/produt/{id?}', function ($id = null) {
     return view('produt', ['id' => $id]);
 });

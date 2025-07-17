@@ -25,6 +25,7 @@
                 <li><a href="/consoles">Consoles</a></li>
                 <li><a href="/jogos">Jogos</a></li>
                 <li><a href="/servicos">Serviços</a></li>
+                <li><a href="/nomes">Nomes</a></li>
             </ul>
         </nav>
     </header>
