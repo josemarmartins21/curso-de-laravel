@@ -5,10 +5,8 @@
 @section('content')
   <!--Hero-->
     <div id="hero">
-        <div id="black">
-        <video autoplay muted loop>
-             
-        </video>
-        </div>
+          <video autoplay muted loop>
+              <source src="/img/game-pass.mp4" type="video/mp4">
+          </video>
     </div>
 @endsection

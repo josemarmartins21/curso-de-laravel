@@ -8,16 +8,20 @@
         @if ($id != '')
             <h1 class="titulo">Jogos {{$id}}</h1>
         @endif
+        @if ($id == 'halo')
         <div id="container">
             <div class="jogo">
                 <div class="img">
                     <img src="/img/halo.jpg" alt="imagem do jogo Halo" class="pequena">
                 </div>
+              
                 <h2>Halo</h2>
                 <p>
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae expedita magnam quia obcaecati adipisci in sequi amet id, delectus, pariatur doloremque iste vel iure aliquam repudiandae architecto? Neque, in magni.
                 </p>
             </div>
+            @endif
+            @if ($id == 'avowed') 
             <div class="jogo">
                 <div class="img">
                     <img src="/img/avowed.jpg" alt="imagem do jogo avowed" class="pequena">
@@ -27,6 +31,7 @@
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae expedita magnam quia obcaecati adipisci in sequi amet id, delectus, pariatur doloremque iste vel iure aliquam repudiandae architecto? Neque, in magni.
                 </p>
             </div>
+            @endif
             <div class="jogo">
                 <div class="img">
                     <img src="/img/gears.jpg" alt="imagem do jogo Gears" class="pequena">
