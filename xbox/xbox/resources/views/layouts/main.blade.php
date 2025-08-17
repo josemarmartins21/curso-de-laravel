@@ -24,8 +24,10 @@
             <ul>
                 <li><a href="/consoles">Consoles</a></li>
                 <li><a href="/jogos">Jogos</a></li>
+                <li><a href="/usuarios">Usuários</a></li>
+                <li><a href="/cadastro">Cadastro</a></li>
                 <li><a href="/servicos">Serviços</a></li>
-                <li><a href="/nomes">Nomes</a></li>
+               
             </ul>
         </nav>
     </header>

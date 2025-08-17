@@ -5,40 +5,39 @@
 
 
 @section('content')
-
-        <img src="/image/catedral.jpg" alt="imagem exemplo">
-       @if (10 < 5)
-            <p>A condição é true</p>
-       @endif
-
-       <p>{{$nome}}</p>
-
-       @if ($nome == "Pedro")
-            <p>O nome é Pedro</p>
-       @elseif ($nome == 'Matheus')
-            <p>O nome é {{$nome}} e ele tem {{$idade2}} anos e trabalha como {{$profissao}}</p>     
-       @else  
-            <p>O nome não é Pedro</p>
-        @endif    
-
-        @for ($i = 0; $i < count($arr); $i++)
-            <p>{{$arr[$i]}} - {{$i}}</p> 
-            @if ($i == 2)
-              <p>O i é {{$i}}</p>
+        <div id="search-container" class="col-md-12">
+            <h1>Busque um evento</h1>
+            <form action="/" method="get">
+                <input type="text" id="search" name="search" class="form-control" placeholder="proucurar...">
+            </form>
+        </div>
+        <div id="events-container" class="col-md-12">
+            @if ($search)
+                <h2>Buscando por: {{ $search }}</h2>
+            @else 
+                <h2>Próximos eventos</h2>
+                 <p class="subtitle">
+                    Veja os eventos dos próximos dias
+                </p>
             @endif
-        @endfor
-
-        @php
-            $name = "João";
-            echo $name;
-        @endphp
-
-        <!--Comentario do HTML-->
-
-        {{--Este é o comentario do blade--}}
-
-        @foreach ($nomes as $nome)
-            <p>{{$loop->index}}</p>
-            <p>{{$nome}}</p>
-        @endforeach
+           
+            <div class="cards-container row">
+                @foreach ($events as $event)
+                <div class="card col-md-3">
+                    <img src="/image/events/{{ $event->image }}" alt="{{ $event->title }}">
+                    <div class="card-body">
+                        <p class="card-date">{{ date('d/m/y', strtotime($event->date))}}</dp>
+                        <h5 class="card-title">{{ $event->title }}</h5>
+                        <p class="card-participants">X participantes</p>
+                        <a href="/events/{{$event->id}}" class="btn btn-primary">Saber mais</a>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+            @if (count($events) == 0 && $search)
+                <p>Não foi possivel encontrar nenhum evento com {{ $search }} <a href="/">Ver todos</a></p>
+                @elseif (count($events) == 0)
+                    <p>Não há eventos disponíveis</p>
+            @endif
+        </div>
 @endsection

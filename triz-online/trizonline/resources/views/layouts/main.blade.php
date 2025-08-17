@@ -10,7 +10,7 @@
     <header><h1>@yield('pagina')</h1></header>
     @yield('content') 
     <footer>
-        <p>&copy;Todos os direito reservado a <a href="#">{{$nomes_func['1']}}</a></p>
+        <p>&copy;Todos os direito reservado a </p>
     </footer>
     </body>
 </html>

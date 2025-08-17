@@ -54,6 +54,7 @@ div#hero {
     justify-content: center;
     overflow: hidden;
     z-index: 1;
+    margin-bottom: 200px;
    
 
 }
@@ -69,7 +70,7 @@ video {
 
 
 
-/*Secção nossos jogos*/
+/* Secção nossos jogos */
 h1.titulo {
     text-align: center;
     padding: 40px;
@@ -77,25 +78,29 @@ h1.titulo {
     font-weight: 700;
 }
 section#jogos {
-    margin-top: 100px;
+    margin-top: 50px;
+    margin-bottom: 200px;
+    height: auto;
+   
 }
 section#jogos > div#container {
     display: flex;
-    flex-flow: row wrap ;
-    
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    height: auto;
 }
 
 div.jogo {
     margin: 10px;
     padding: 10px;
     flex-basis: 450px;
-    flex-grow: 2;
+    flex-grow: 1;
     
 }
 
 div.jogo:last-child {
     flex-grow: 0;
-    flex-basis: 800px;
+    flex-basis: 700px;
     text-align: left;
 }
 
@@ -123,7 +128,7 @@ div.jogo > p {
 
 }
 
-/*Secção consoles do XBOX*/
+/* Secção consoles do XBOX */
 section#consoles-xbox {
     padding: 30px;
 }
@@ -187,24 +192,151 @@ img.pequena-c:hover {
     color: black;
 }
 
+/* Secção de usuários/jogos */
 
+section#card-cadastro {
+    margin-top: 50px;
+    margin-bottom: 200px;
+}
 
-/*Secção de nossos serviços*/
-
-main >  #nossos-servicos {
-    background-color: rgba(0, 0, 0, 0.158);
+.card-usuarios, section.cadastro-flex {
+    width: 100vw;
+    height: 70vh;
     display: flex;
-    padding: 20px;
     flex-flow: row wrap;
-    justify-content: space-around;
     align-items: flex-start;
+    padding: 0px 20px;
+    gap: 10px;
+}
+
+.card-user {
+    border: 2px solid #1a751a;
+    border-radius: 10px;
+    height: 200px;
+    flex: 0 1 380px;
+    padding: 5px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+}
+
+.card-user h3 {
+    text-align: center;
+    margin-bottom: 15px;
     
 }
 
-div.servicos {
-    width: 500px;
-    align-self: center;
+.card-user p {
+    text-align: center;
+    line-height: 1.5em;
+}
 
+.card-user p:last-child {
+    text-align: left;
+}
+
+.card-user span {
+    font-weight: 700;
+}
+
+.card-jogo {
+    border: 1px solid black;
+}
+
+section.cadastro-flex {
+    justify-content: space-evenly;
+    
+}
+
+.card-cadastro {
+    text-decoration: none;
+    color: black;   
+}
+
+.card-cadastro:hover {
+    background-color: #1a751a;
+    color: white;
+    transition: background-color .2s;
+}
+
+
+#cadastro  h2 {
+    text-align: center;
+}
+
+/* Estilo para secção de cadastrar */
+
+section#cadastro {
+    margin-bottom: 80px;
+    margin-top: 0;
+}
+
+#container h1 {
+    color: green;
+    font-weight: 800;
+}
+
+
+#container {
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+   
+
+}
+
+form {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 300px;
+}
+
+div.form-group {
+    width: 100%;
+    margin: 10px 0px;
+}
+
+input, select, input[type=submit] {
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+input[type=submit] {
+    background-color: var(--cor-botoes);
+    color: white;
+    border-style: none;
+    border-radius: 5px;
+    cursor: pointer;
+    opacity: .8;
+    transition: .5s;
+}
+
+input[type=submit]:hover {
+    opacity: 1;
+}
+
+/* Secção de nossos serviços */
+
+#nossos-servicos {
+    background-color: rgba(0, 0, 0, 0.158);
+    display: flex;
+    padding: 20px;
+    margin: 60px 0px;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+   
+}
+
+div.servicos {
+    flex: 0 1 500px;
+
+}
+
+div.servicos:last-child {
+    align-self: center;
 }
 
 
@@ -215,10 +347,58 @@ div.servicos > div.img > img {
     
 }
 
+/* Estilo para cadastrar */
+
+#container {
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    
+
+}
+
+form {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 300px;
+    margin-top: 50px;
+}
+
+div.form-group {
+    width: 100%;
+    margin: 10px 0px;
+}
+
+input, select, input[type=submit] {
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+input[type=submit] {
+    background-color: var(--cor-botoes);
+    color: white;
+    border-style: none;
+    border-radius: 5px;
+    cursor: pointer;
+    opacity: .8;
+    transition: .5s;
+}
+
+input[type=submit]:hover {
+    opacity: 1;
+}
+
 /*Footer*/
 
 footer  {
     padding: 20px;
+    background-color: rgb(10, 114, 10);
+    color: white;
+    
+
 }
 
 footer > p {

@@ -22,20 +22,51 @@
                         <img src="/image/qos-logo-sem-fundo.png" alt="logotipo">
                     </a>
                     <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a href="/produtos/adicionar" class="nav-link">Eventos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/events/create" class="nav-link">Criar eventos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/produtos/remove" class="nav-link">Entrar e cadastrar</a>
-                        </li>
+                        @auth {{-- Links para quem está autenticado nos sistema --}}
+                            <li class="nav-item">
+                                <a href="/produtos/adicionar" class="nav-link">Eventos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/events/create" class="nav-link">Criar eventos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/dashboard" class="nav-link">Dashboard</a>
+                            </li>
+                            <li class="nav-item">
+                                <form action="/logout" method="post">
+                                    @csrf
+                                    <a href="/logout" class="nav-link" onclick="event.preventDefault();this.closest('form').submit();">
+                                        Sair
+                                    </a>
+                                </form>
+                            </li>
+                        @endauth
+                        @guest  {{-- Links para quem não está autenticado --}}
+                            <li class="nav-item">
+                                <a href="/login" class="nav-link">Entrar</a>
+                            </li>
+                                <li class="nav-item">
+                                <a href="/events/create" class="nav-link">Criar eventos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/register" class="nav-link">Registrar</a>
+                            </li>
+                        @endguest
                     </ul>
                 </div>
             </nav>
         </header>
-   @yield('content')
+        <main>
+            <div class="container-fluid">
+                <div class="row">
+                    @if (session('msg'))
+                        <p class="msg">{{session('msg')}}</p>
+                    @endif
+                    @yield('content')
+                </div>
+            </div>
+        </main>
+   
     <footer>
         <p>HDC events &copy;2025</p>
     </footer>

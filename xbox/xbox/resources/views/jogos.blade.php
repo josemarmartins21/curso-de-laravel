@@ -3,53 +3,27 @@
 @section('title', 'Jogos Xbox')
 
 @section('content')
- <!--Secção de Jogos-->
-    <section id="jogos">
-        @if ($id != '')
-            <h1 class="titulo">Jogos {{$id}}</h1>
+ <!-- Secção de Jogos -->
+<section id="jogos">
+        <h1 class="titulo">Jogos</h1>
+        @if (session('msg'))
+        <p>
+            {{ session('msg') }}
+        </p>
         @endif
-        @if ($id == 'halo')
         <div id="container">
-            <div class="jogo">
-                <div class="img">
-                    <img src="/img/halo.jpg" alt="imagem do jogo Halo" class="pequena">
+            @foreach ($jogos as $jogo)
+                <div class="jogo">
+                    <div class="img">
+                        <img src="/img/jogos/{{ $jogo->image }}" alt="imagem do jogo Halo" class="pequena">
+                    </div>
+                
+                    <h2>{{ $jogo->nome }}</h2>
+                    <p>
+                        {{ $jogo->descricao }}
+                    </p>
                 </div>
-              
-                <h2>Halo</h2>
-                <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae expedita magnam quia obcaecati adipisci in sequi amet id, delectus, pariatur doloremque iste vel iure aliquam repudiandae architecto? Neque, in magni.
-                </p>
+            @endforeach
             </div>
-            @endif
-            @if ($id == 'avowed') 
-            <div class="jogo">
-                <div class="img">
-                    <img src="/img/avowed.jpg" alt="imagem do jogo avowed" class="pequena">
-                </div>
-                <h2>Avowed</h2>
-                <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae expedita magnam quia obcaecati adipisci in sequi amet id, delectus, pariatur doloremque iste vel iure aliquam repudiandae architecto? Neque, in magni.
-                </p>
-            </div>
-            @endif
-            <div class="jogo">
-                <div class="img">
-                    <img src="/img/gears.jpg" alt="imagem do jogo Gears" class="pequena">
-                </div>
-                <h2>Gears of war</h2>
-                <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae expedita magnam quia obcaecati adipisci in sequi amet id, delectus, pariatur doloremque iste vel iure aliquam repudiandae architecto? Neque, in magni.
-                </p>
-            </div>
-            <div class="jogo">
-                <div class="img">
-                    <img src="/img/forza-horizon.jpg" alt="imagem do jogo forza horizon" class="pequena">
-                </div>
-                <h2>Forza Horizon</h2>
-                <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae expedita magnam quia obcaecati adipisci in sequi amet id, delectus, pariatur doloremque iste vel iure aliquam repudiandae architecto? Neque, in magni.
-                </p>
-            </div>
-        </div>
-        
+    </section>
 @endsection

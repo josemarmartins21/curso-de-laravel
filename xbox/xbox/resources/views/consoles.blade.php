@@ -5,7 +5,6 @@
 @section('content')
     <!--Consoles do Xbox-->
   <!--Consoles do Xbox-->
-        <p>{{$busca}}</p>
         <section id="consoles-xbox">
             <h1 class="titulo">Consoles <strong>XBOX</strong></h1>
             <div id="consoles">
