@@ -23,10 +23,10 @@
                         <tr>
                             <td scope="row"> {{ $loop->index + 1 }} </td>
                             <td > <a href="/events/{{ $event->id }}"> {{ $event->title }} </a></td>
-                            <td>0</td>
+                            <td> {{ count($event->users) }} </td>
                             <td>
                                 <a href="/events/edit/{{ $event->id }}" class="btn btn-info edit-btn">Editar</a>
-                                <form action="/events/{{ $event->id }}" method="post">
+                                <form action="/events/{{ $event->id }}" method="post" style="display: inline-block">
                                     @csrf 
                                     @method('Delete')
                                     <button type="submit" class="btn btn-danger delete-btn">Deletar</button>
@@ -39,6 +39,43 @@
         @else 
             <p>Você ainda não tem eventos <a href="/events/create">Criar eventos</a></p>
         @endif    
+    </div>
+    <div class="col-md-10 offset-md-1 dashboard-title-container">
+        <h1>Eventos que estou Participando</h1>
+        @if (count($eventsAsParticipants) > 0)
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Participantes</th>
+                        <th scope="col">Sair do evento</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($eventsAsParticipants as $event)
+                        <tr>
+                            <td scope="row"> {{ $loop->index + 1 }} </td>
+                            <td > <a href="/events/{{ $event->id }}"> {{ $event->title }} </a></td>
+                            <td> {{ count($event->users) }} </td>
+                            <td>
+                            <form action="/event/leave/{{ $event->id }}" method="POST">
+                                @csrf
+                                @method('Delete')
+                                <button type="submit" class="btn btn-danger delete-btn">
+                                    Sair do evento  
+                                </button>
+
+                            </form>
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        @else
+            <p>Você ainda não está participando de nenhum evento <a href="/">Veja todos os eventos</a></p>
+        @endif
+
     </div>
 
 @endsection

@@ -4,7 +4,14 @@
     font-family: 'Roboto';
 }
 /* General */
-
+#info-container .already-joined-msg {
+    margin: 15px 0;
+    color: #004085;
+    background-color: #cce5ff;
+    border: 1px solid #B8DAFF;
+    padding: 10px;
+    width: 275px;
+}
 body {
     min-height: 100vh;
     padding-bottom: 100px;
@@ -220,7 +227,7 @@ header {
 
     /* Edit page */
 
-    .img-preview {
+     .img-preview {
         width: 120px;
         margin-top: 5px;
        

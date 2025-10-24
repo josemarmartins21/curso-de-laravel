@@ -1,11 +1,12 @@
-@extends('layouts.main')
-  @section('tittle', 'Triz online')     
-  @section('pagina', 'Triz online')     
-    @section('content') 
-        <main>
-        <h2>Nome dos nossos funcionarios</h2>
-          @foreach ($events as $event)
-            <p>{{ $event->title }} -- {{ $event->descricao }} {{ $event->descricao }} -- {{ $event->city }}</p>
-          @endforeach
-      </main>
-    @endsection
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>IMC</title>
+</head>
+<body>
+  
+</body>
+</html>

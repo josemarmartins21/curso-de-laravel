@@ -75,9 +75,23 @@ class EventController extends Controller
         
         $event = Event::findOrFail($id);
 
+        $user = Auth::user();
+
+        $hasUserJoined = false;
+
+        if ($user) {
+            $userEvents = $user->eventsAsParticipant()->get()->toArray();
+
+            foreach ($userEvents as $userEvent) {
+                if ($userEvent['id'] == $id) {
+                    $hasUserJoined = true;
+                }
+            }
+        }
+
         $eventOwner = User::where('id', $event->user_id)->first()->toArray();
 
-        return view('events.show', ['event' => $event, 'eventOwner' => $eventOwner]);
+        return view('events.show', ['event' => $event, 'eventOwner' => $eventOwner, 'hasUserJoined' => $hasUserJoined]);
     }
 
     public function create()
@@ -91,7 +105,9 @@ class EventController extends Controller
 
         $events = $user->events;
 
-        return view('events.dashboard', ['events' => $events]);
+        $eventAsParticipants = $user->eventsAsParticipant;
+
+        return view('events.dashboard', ['events' => $events, 'eventsAsParticipants' => $eventAsParticipants]);
     }
 
     public function destroy($id)
@@ -103,7 +119,13 @@ class EventController extends Controller
 
     public function edit($id)
     {
+        $user = Auth::user();
+        
         $event = Event::findOrFail($id);
+
+        if ($user->id != $event->user_id) {
+            return redirect('/dashboard');
+        }
 
         return view('events.edit', ['event' => $event]);
     }
@@ -146,5 +168,17 @@ class EventController extends Controller
         $event = Event::findOrFail($id);
 
         return redirect('/dashboard')->with('msg', 'Sua presença está marcada para o evento: ' . $event->title);
+    }
+
+    public function leaveEvent($id)
+    {
+        $user = Auth::user();
+
+        $user->eventsAsParticipant()->detach();
+
+        $event = Event::findOrFail($id);
+
+        return redirect('/dashboard')->with('msg', 'Você saiu com suecesso ' . $event->title);
+
     }
 }

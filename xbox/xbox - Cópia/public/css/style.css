@@ -1,0 +1,432 @@
+@charset "UTF-8";
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Mulish', Arial, Helvetica, sans-serif;
+}
+
+header {
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 10px;
+    align-items: center;
+}
+
+
+
+nav#menu {
+    align-self: flex-end;
+    padding-bottom: 10px;
+}
+
+img#logo-img:hover {
+    cursor: pointer;
+}
+
+ul > li {
+    display: inline;
+}
+
+ul > li > a {
+    color: white;
+    text-decoration: none;
+    margin: 0px 5px;
+    
+}
+
+ul > li > a:hover {
+    text-decoration: underline;
+    color: green;
+}
+
+/* Hero */
+
+div#hero {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    background-color: rgba(0, 0, 0, 0.308);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    z-index: 1;
+    margin-bottom: 200px;
+   
+
+}
+
+video {
+    position: absolute;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+
+
+
+/* Secção nossos jogos */
+h1.titulo {
+    text-align: center;
+    padding: 40px;
+    font-size: 3em;
+    font-weight: 700;
+}
+section#jogos {
+    margin-top: 50px;
+    margin-bottom: 200px;
+    height: auto;
+   
+}
+section#jogos > div#container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    height: auto;
+}
+
+div.jogo {
+    margin: 10px;
+    padding: 10px;
+    flex-basis: 450px;
+    flex-grow: 1;
+    
+}
+
+div.jogo:last-child {
+    flex-grow: 0;
+    flex-basis: 700px;
+    text-align: left;
+}
+
+div.jogo:last-child > p {
+    text-align: justify;
+}
+
+
+div.jogo:hover {
+    outline: 1px solid black;
+}
+
+.img > img.pequena {
+    width: 100%;
+    display: block;
+}
+
+div.jogo > h2 {
+    text-align: center;
+}
+
+div.jogo > p {
+    text-align: center;
+    line-height: 1.5em;
+
+}
+
+/* Secção consoles do XBOX */
+section#consoles-xbox {
+    padding: 30px;
+}
+.console {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 80px;
+}
+
+div#c2 div.img {
+    order: 1;
+}
+
+div#c4  div.img {
+    order: 1;
+}
+
+.console > .details, .console > .img {
+    flex: 0 1 500px;
+}
+
+.console > .details > p {
+    text-align: left;
+    line-height: 1.8em;
+}
+
+.console > .details > h3 {
+    font-weight: 900;
+    font-size: 2.5em;
+    padding: 10px;
+}
+
+.console > .details {
+    align-self: center;
+}
+
+img.pequena-c {
+    display: block;
+    width: 100%;
+}
+
+img.pequena-c:hover {
+    transform: translate(0px, -20px);
+    transition: transform .3s;
+
+}
+
+.details a {
+    color: black;
+    text-decoration: none;
+    color: green;
+}
+
+.details a:hover {
+    text-decoration: underline;
+}
+
+.details a:active {
+    color: black;
+}
+
+/* Secção de usuários/jogos */
+
+section#card-cadastro {
+    margin-top: 50px;
+    margin-bottom: 200px;
+}
+
+.card-usuarios, section.cadastro-flex {
+    width: 100vw;
+    height: 70vh;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    padding: 0px 20px;
+    gap: 10px;
+}
+
+.card-user {
+    border: 2px solid #1a751a;
+    border-radius: 10px;
+    height: 200px;
+    flex: 0 1 380px;
+    padding: 5px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+}
+
+.card-user h3 {
+    text-align: center;
+    margin-bottom: 15px;
+    
+}
+
+.card-user p {
+    text-align: center;
+    line-height: 1.5em;
+}
+
+.card-user p:last-child {
+    text-align: left;
+}
+
+.card-user span {
+    font-weight: 700;
+}
+
+.card-jogo {
+    border: 1px solid black;
+}
+
+section.cadastro-flex {
+    justify-content: space-evenly;
+    
+}
+
+.card-cadastro {
+    text-decoration: none;
+    color: black;   
+}
+
+.card-cadastro:hover {
+    background-color: #1a751a;
+    color: white;
+    transition: background-color .2s;
+}
+
+
+#cadastro  h2 {
+    text-align: center;
+}
+
+/* Estilo para secção de cadastrar */
+
+section#cadastro {
+    margin-bottom: 80px;
+    margin-top: 0;
+}
+
+#container h1 {
+    color: green;
+    font-weight: 800;
+}
+
+
+#container {
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+   
+
+}
+
+form {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 300px;
+}
+
+div.form-group {
+    width: 100%;
+    margin: 10px 0px;
+}
+
+input, select, input[type=submit] {
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+input[type=submit] {
+    background-color: var(--cor-botoes);
+    color: white;
+    border-style: none;
+    border-radius: 5px;
+    cursor: pointer;
+    opacity: .8;
+    transition: .5s;
+}
+
+input[type=submit]:hover {
+    opacity: 1;
+}
+
+/* Secção de nossos serviços */
+
+#nossos-servicos {
+    background-color: rgba(0, 0, 0, 0.158);
+    display: flex;
+    padding: 20px;
+    margin: 60px 0px;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+   
+}
+
+div.servicos {
+    flex: 0 1 500px;
+
+}
+
+div.servicos:last-child {
+    align-self: center;
+}
+
+
+
+div.servicos > div.img > img {
+    display: block;
+    width: 100%;
+    
+}
+
+/* Estilo para cadastrar */
+
+#container {
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    
+
+}
+
+form {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 300px;
+    margin-top: 50px;
+}
+
+div.form-group {
+    width: 100%;
+    margin: 10px 0px;
+}
+
+input, select, input[type=submit] {
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+input[type=submit] {
+    background-color: var(--cor-botoes);
+    color: white;
+    border-style: none;
+    border-radius: 5px;
+    cursor: pointer;
+    opacity: .8;
+    transition: .5s;
+}
+
+input[type=submit]:hover {
+    opacity: 1;
+}
+
+/*Footer*/
+
+footer  {
+    padding: 20px;
+    background-color: rgb(10, 114, 10);
+    color: white;
+    
+
+}
+
+footer > p {
+    text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+    nav {
+        display: none;
+    }    
+
+    header {
+        justify-content: center;
+    }
+
+    div#c2 div.img, div#c4 div.img {
+        order: 0;
+    }
+
+    img.pequena-c:hover {
+        transform: none;
+    }
+
+    div.jogo p {
+        text-align: left;
+    }
+
+    div.jogo:hover {
+        outline: none;
+    }
+}

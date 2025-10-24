@@ -14,6 +14,7 @@ Route::get('/events/edit/{id}', [EventController::class, 'edit'])->middleware('a
 Route::get('/events/{id}', [EventController::class, 'show']);
 Route::put('/events/update/{id}', [EventController::class, 'update'])->middleware('auth');
 Route::post('/event/join/{id}', [EventController::class, 'joinEvent'])->middleware('auth');
+Route::delete('/event/leave/{id}', [EventController::class, 'leaveEvent'])->middleware('auth');
 
 
 Route::get('/contacto', function () {

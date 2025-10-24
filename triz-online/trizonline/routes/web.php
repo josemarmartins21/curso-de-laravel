@@ -3,17 +3,10 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\PesoController;
 
-
-
-
-
-Route::get('/', [EventController::class, 'index']);
-
-
-Route::get('/contactos', []);
-
-Route::get('/nossahistoria', function () {
-    $nomes = ['Daniel Avelino', 'Beatriz Isabel', 'Nelson Tulomba', 'Simão'];
-    return view('nossahistoria', ['nomes_func' => $nomes]);
+Route::get('/', function () {
+    return "Home page";
 });
+
+
